@@ -14,7 +14,7 @@ const firebaseConfig = {
   storageBucket: "ai-chatbot-cd0f9.appspot.com",
   messagingSenderId: "920024163720",
   appId: "1:920024163720:web:44f98157b44e1ce542863d",
-  measurementId: "G-TD9F3JRP4J"
+  measurementId: "G-TD9F3JRP4J",
 };
 
 // Initialize Firebase
@@ -22,4 +22,4 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 // const analytics = getAnalytics(app);
 
-export { app, auth }; 
+export { app, auth };

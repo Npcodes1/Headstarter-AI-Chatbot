@@ -65,7 +65,7 @@ Response: "Oh, don't get all sentimental on me. Just get on with it before you m
 // POST function to handle incoming requests
 export async function POST(req) {
   // create a new instance of the GoogleGenerativeAI client
-  const genAI = new GoogleGenerativeAI("AIzaSyAwst0SHyHdevspGhqhSh1zUD2PT-e7i90");
+  const genAI = new GoogleGenerativeAI(process.env.API_KEY);
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
   //parse the json body from the request

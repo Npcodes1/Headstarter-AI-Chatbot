@@ -57,7 +57,7 @@ function LandingPage({ onStartChat }) {
       justifyContent="center"
       alignItems="center"
       sx={{
-        backgroundImage: 'url(/LandingPagebg.png)', // Ensure this image path is correct
+        backgroundImage: "url(/LandingPagebg.png)", // Ensure this image path is correct
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

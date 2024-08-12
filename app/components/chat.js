@@ -84,7 +84,7 @@ export default function Page() {
     }
   };
 
-  const handleKeyPress = (event) => {
+  const handleKeyDown = (event) => {
     if (event.key === "Enter" && !event.shiftKey) {
       event.preventDefault();
       sendMessage();
@@ -120,11 +120,19 @@ export default function Page() {
         boxShadow={3}
       >
         <Box display="flex" flexDirection="column" alignItems="center">
-          <Link href="https://github.com/iam-weijie/ai-companion" target="_blank" rel="noopener noreferrer">
+          <Link
+            href="https://github.com/iam-weijie/ai-companion"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Avatar
               src="chatbot-pfp.png"
               alt="MAAN"
-              sx={{ width: isMobile ? 60 : 80, height: isMobile ? 60 : 80, mb: 1 }}
+              sx={{
+                width: isMobile ? 60 : 80,
+                height: isMobile ? 60 : 80,
+                mb: 1,
+              }}
             />
           </Link>
           <Typography
@@ -135,17 +143,14 @@ export default function Page() {
           </Typography>
         </Box>
         <Divider />
-        <Stack
-          direction="column"
-          spacing={2}
-          flexGrow={1}
-          overflow="auto"
-        >
+        <Stack direction="column" spacing={2} flexGrow={1} overflow="auto">
           {messages.map((msg, index) => (
             <Box
               key={index}
               display="flex"
-              justifyContent={msg.role === "assistant" ? "flex-start" : "flex-end"}
+              justifyContent={
+                msg.role === "assistant" ? "flex-start" : "flex-end"
+              }
             >
               <Box
                 bgcolor={msg.role === "assistant" ? grey[200] : blue[600]}
@@ -170,7 +175,7 @@ export default function Page() {
             rows={isMobile ? 2 : 4}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            onKeyPress={handleKeyPress}
+            onKeyDown={handleKeyDown}
             disabled={isLoading}
             variant="outlined"
           />
